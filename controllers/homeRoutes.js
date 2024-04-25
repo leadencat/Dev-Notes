@@ -64,9 +64,6 @@ router.get('/posts/:id', withAuth, async (req, res) => {
   }
 });
 
-
-
-
 router.get('/comments/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -106,10 +103,6 @@ router.get('/comments/:id', withAuth, async (req, res) => {
   }
 });
 
-
-
-
-
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -142,7 +135,6 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-
 router.get('/post', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -161,9 +153,6 @@ router.get('/post', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
